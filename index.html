@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ames,Iowa,House Value Estimator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Ames, Iowa, House Value Estimator</h1>
+        <form id="houseForm">
+            <div class="input-group">
+                <label for="neighborhood">Neighborhood:</label>
+                <select id="neighborhood" name="neighborhood" required>
+                    <option value="" disabled selected>Select a neighborhood</option>
+                    <option value="7">Bloomington Heights</option>
+                    <option value="20">Bluestem</option>
+                    <option value="4">Briardale</option>
+                    <option value="14">Brookside</option>
+                    <option value="15">Clear Creek</option>
+                    <option value="18">College Creek</option>
+                    <option value="19">Crawford</option>
+                    <option value="17">Edwards</option>
+                    <option value="2">Gilbert</option>
+                    <option value="21">Iowa DOT and Rail Road</option>
+                    <option value="24">Meadow Village</option>
+                    <option value="22">Mitchell</option>
+                    <option value="1">North Ames</option>
+                    <option value="8">Northridge</option>
+                    <option value="5">Northpark Villa</option>
+                    <option value="6">Northridge Heights</option>
+                    <option value="12">Northwest Ames</option>
+                    <option value="13">Old Town</option>
+                    <option value="16">South & West of Iowa State University</option>
+                    <option value="11">Sawyer</option>
+                    <option value="10">Sawyer West</option>
+                    <option value="9">Somerset</option>
+                    <option value="3">Stone Brook</option>
+                    <option value="23">Timberland</option>
+                    <option value="25">Veenker</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="GarageType">Garage:</label>
+                <select id="GarageType" name="GarageType" required>
+                    <option value="" disabled selected>Do you have a garage?</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="PoolQC">Pool:</label>
+                <select id="PoolQC" name="PoolQC" required>
+                    <option value="" disabled selected>Do you have a pool?</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="BsmtQual">Baseroom:</label>
+                <select id="BsmtQual" name="BsmtQual" required>
+                    <option value="" disabled selected>Do you have a baseroom?</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="TotalLivingArea">Total Living Area:</label>
+                <input type="number" id="TotalLivingArea" name="sqft" required>
+            
+
+            <div class="input-group">
+                <label for="bldgType">Type of Dwelling:</label>
+                <select id="bldgType" name="bldgType" required>
+                    <option value="" disabled selected>Select a Type</option>
+                    <option value="1">Single-family Detached</option>
+                    <option value="2">Two-family Conversion</option>
+                    <option value="3">Duplex</option>
+                    <option value="4">Townhouse End Unit</option>
+                    <option value="5">Townhouse Inside Unit</option>
+                </select>
+            </div>
+                
+
+            <div class="input-group">
+                <label for="exterQual">Exterior Material Quality:</label>
+                <select id="exterQual" name="exterQual" required>
+                    <option value="" disabled selected>Select Exterior Quality</option>
+                    <option value="5">Excellent (Ex)</option>
+                    <option value="4">Good (Gd)</option>
+                    <option value="3">Average/Typical (TA)</option>
+                    <option value="2">Fair (Fa)</option>
+                    <option value="1">Poor (Po)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="exterCond">Exterior Condition:</label>
+                <select id="exterCond" name="exterCond" required>
+                    <option value="" disabled selected>Select Exterior Condition</option>
+                    <option value="5">Excellent (Ex)</option>
+                    <option value="4">Good (Gd)</option>
+                    <option value="3">Average/Typical (TA)</option>
+                    <option value="2">Fair (Fa)</option>
+                    <option value="1">Poor (Po)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="overallQual">Material & Finish Quality:</label>
+                <select id="overallQual" name="overallQual" required>
+                    <option value="" disabled selected>Rate Quality</option>
+                    <option value="10">Very Excellent</option>
+                    <option value="9">Excellent</option>
+                    <option value="8">Very Good</option>
+                    <option value="7">Good</option>
+                    <option value="6">Above Average</option>
+                    <option value="5">Average</option>
+                    <option value="4">Below Average</option>
+                    <option value="3">Fair</option>
+                    <option value="2">Poor</option>
+                    <option value="1">Very Poor</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="overallCond">Overall Condition:</label>
+                <select id="overallCond" name="overallCond" required>
+                    <option value="" disabled selected>Rate Condition</option>
+                    <option value="10">Very Excellent</option>
+                    <option value="9">Excellent</option>
+                    <option value="8">Very Good</option>
+                    <option value="7">Good</option>
+                    <option value="6">Above Average</option>
+                    <option value="5">Average</option>
+                    <option value="4">Below Average</option>
+                    <option value="3">Fair</option>
+                    <option value="2">Poor</option>
+                    <option value="1">Very Poor</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="yearRemodAdd">Remodel Year same as construction date if no remodeling or additions
+                    :</label>
+                <input type="number" id="yearRemodAdd" name="yearRemodAdd" min="1900" max="2025" required>
+            </div>
+            
+            <button type="submit">Estimate Value</button>
+        </form>
+
+        <div id="result">
+            <h2>Estimated House Value: <span id="value">$0</span></h2>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
