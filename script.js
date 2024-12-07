@@ -1,59 +1,58 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
+// Selectors
+const titleContainer = document.getElementById('title-container');
+const formContainer = document.getElementById('form-container');
+const startBtn = document.getElementById('start-btn');
+const slides = document.querySelectorAll('.slide');
+const nextBtns = document.querySelectorAll('.next-btn');
+const prevBtns = document.querySelectorAll('.prev-btn');
+const finalValue = document.getElementById('final-value');
+
+let currentSlide = 0; // Tracks current slide
+
+// Function to show a specific slide
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
 }
 
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+// Start button handler
+startBtn.addEventListener('click', () => {
+    titleContainer.classList.add('hidden'); // Hide the title container
+    formContainer.classList.remove('hidden'); // Show the form
+    showSlide(currentSlide); // Show the first slide
+});
 
-h1 {
-    text-align: center;
-    color: #333;
-}
+// Next button handlers
+nextBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+    });
+});
 
-.input-group {
-    margin-bottom: 15px;
-}
+// Previous button handlers
+prevBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+    });
+});
 
-.input-group label {
-    display: block;
-    font-weight: bold;
-}
+// Handle form submission and show the final result
+document.getElementById('houseForm').addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent form submission
 
-.input-group input {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
+    // Calculate the result (basic calculation)
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+    const estimatedValue = 50000 + parseInt(data.neighborhood || 0) * 2000;
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-#result {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-}
+    // Show the result
+    finalValue.textContent = `$${estimatedValue.toLocaleString()}`;
+    showSlide(slides.length - 1); // Go to the final slide
+});

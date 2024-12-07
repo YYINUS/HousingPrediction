@@ -1,99 +1,177 @@
+/* Body with Background Image */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #eef2f7;
+    background: url('background.jpg') no-repeat center bottom; /* Replace 'background.jpg' with your image path */
+    background-size: cover; /* Ensure the image covers the entire viewport */
     margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative; /* Set positioning for layer management */
+    z-index: 0; /* Lowest layer */
 }
 
-select {
+/* Start Button */
+.start-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0073e6; /* Blue background color */
+    color: white; /* White text color */
+    cursor: pointer;
+}
+
+.start-btn:hover {
+    background-color: #005bb5; /* Darker blue when hovered */
+}
+
+/* Labels */
+label {
+    display: block;
+    font-size: 26px; /* Larger font size for emphasis */
+    font-weight: bold;
+    color: #0056b3; /* Darker blue for contrast */
+    margin-bottom: 15px;
+    text-align: left;
+    text-transform: capitalize; /* Capitalize each word for readability */
+    letter-spacing: 1px; /* Slight letter spacing for elegance */
+    transition: color 0.3s ease-in-out, transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Add hover effect to labels */
+label:hover {
+    color: #0073e6; /* Brighter blue on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Title Container */
+.title-container {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative; /* Ensures it stays above the background */
+    z-index: 1; /* Higher layer */
+}
+
+.title-container h1 {
+    font-size: 50px;
+    color:#FFFFFF;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Main Container */
+.container {
+    width: 80%;
+    max-width: 900px;
+    background: white; /* White background for content */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 40px 50px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+    position: relative; /* Ensure it stays above the background */
+    z-index: 1; /* Higher layer */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide Styles */
+.slide {
+    display: none;
+    font-size: 20px;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* Inputs and Dropdowns */
+select, input[type="number"] {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
     background-color: #f9f9f9;
     color: #333;
+    margin-bottom: 30px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    appearance: none; /* Removes default dropdown styling */
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"%3E%3Cpath fill="%23333" d="M0 2l5 5 5-5z"/%3E%3C/svg%3E');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 10px;
-    cursor: pointer;
 }
 
-select:focus {
+select:focus, input[type="number"]:focus {
     outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    border-color: #0073e6; /* Focused blue border */
+    box-shadow: 0 0 8px rgba(0, 115, 230, 0.6);
+    background-color: #eef6ff; /* Slightly darker background */
+    color: #0056b3; /* Darker text on focus */
 }
 
-.input-group {
-    margin-bottom: 20px;
-}
-
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: linear-gradient(135deg, #ffffff, #f0f4fc);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
+/* Dropdown Options Styling */
+option {
+    font-size: 18px; /* Slightly smaller than dropdown text */
+    font-weight: normal; /* Regular weight for better readability */
     color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
+    padding: 10px; /* Add padding to options */
 }
 
-.input-group {
-    margin-bottom: 15px;
+/* Option Hover Effects */
+option:hover {
+    background-color: #f0f8ff; /* Light blue background */
+    color: #0056b3; /* Blue text */
 }
 
-.input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.input-group input:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
-}
-
+/* Buttons */
 button {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, #4CAF50, #81c784);
-    color: white;
-    border: none;
+    padding: 15px 30px;
     font-size: 18px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
-    border-radius: 8px;
-    transition: background 0.3s ease, transform 0.2s ease;
+    margin: 20px 10px;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.next-btn {
+    background-color: #28a745; /* Green */
+}
+
+button.prev-btn {
+    background-color: #f0ad4e; /* Orange */
 }
 
 button:hover {
-    background: linear-gradient(135deg, #45a049, #66bb6a);
-    transform: scale(1.02);
+    transform: translateY(-2px);
+    background-color: #1d7a32; /* Darker green for hover */
 }
 
-#result {
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Add Subtle Animations for User Feedback */
+button:active {
+    transform: translateY(2px);
+}
+
+/* Result Text */
+#final-value {
+    font-size: 50px;
+    color: #28a745;
     margin-top: 20px;
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
 }
