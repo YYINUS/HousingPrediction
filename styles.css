@@ -13,6 +13,28 @@ body {
     z-index: 0; /* Lowest layer */
 }
 
+/* Text in the Absolute Left Corner of the Page */
+.absolute-left {
+    position: fixed; /* Fixed positioning to stay in the same place on the screen */
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+    font-size: 12px; /* Small font size */
+    color: #ffffff; /* White text */
+    font-weight: 300; /* Light font weight */
+    background-color: rgba(0, 0, 0, 0.6); /* Optional: semi-transparent background for readability */
+    padding: 5px 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    z-index: 1000; /* High z-index to ensure it appears above all other elements */
+}
+
+
+.error-message {
+    color: #d9534f; /* Red color for error */
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
 /* Start Button */
 .start-btn {
     padding: 15px 30px;
@@ -148,6 +170,15 @@ button {
 
 button.next-btn {
     background-color: #28a745; /* Green */
+}
+
+/* Calculate Button */
+button#calculate-btn {
+    background-color: #28a745; /* Green */
+}
+
+button#calculate-btn:hover {
+    background-color: #1d7a32; /* Darker green for hover */
 }
 
 button.prev-btn {

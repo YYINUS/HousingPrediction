@@ -16,6 +16,21 @@ function showSlide(index) {
     });
 }
 
+document.querySelector('.next-btn').addEventListener('click', function () {
+    const yearInput = document.getElementById('yearRemodAdd');
+    const errorSpan = document.getElementById('yearError');
+    const year = parseInt(yearInput.value, 10);
+
+    // Check if the input value is within the valid range
+    if (year < 1900 || year > 2025 || isNaN(year)) {
+        errorSpan.textContent = 'Please enter a year between 1900 and 2025.';
+    } else {
+        errorSpan.textContent = ''; // Clear the error message if valid
+        // Proceed to the next slide (if you have a slide navigation function)
+    }
+});
+
+
 // Start button handler
 startBtn.addEventListener('click', () => {
     titleContainer.classList.add('hidden'); // Hide the title container
