@@ -13,6 +13,11 @@ body {
     z-index: 0; /* Lowest layer */
 }
 
+.hidden {
+    display: none;
+}
+
+
 /* Text in the Absolute Left Corner of the Page */
 .absolute-left {
     position: fixed; /* Fixed positioning to stay in the same place on the screen */

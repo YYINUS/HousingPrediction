@@ -16,6 +16,35 @@ function showSlide(index) {
     });
 }
 
+
+// Add event listener for basement selection
+document.getElementById('BsmtQual').addEventListener('change', function () {
+    const bsmtSFContainer = document.getElementById('bsmtSF-container');
+    const nextButton = document.querySelector('.next-btn');
+
+    if (this.value === '1') {
+        // Show square footage input for "Yes"
+        bsmtSFContainer.classList.remove('hidden');
+        nextButton.disabled = true; // Disable "Next" until valid input is provided
+    } else {
+        // Hide square footage input for "No"
+        bsmtSFContainer.classList.add('hidden');
+        document.getElementById('BsmtSF').value = ''; // Clear input
+        nextButton.disabled = false; // Enable "Next" for "No"
+    }
+});
+
+// Add event listener for square footage input validation
+document.getElementById('BsmtSF').addEventListener('input', function () {
+    const nextButton = document.querySelector('.next-btn');
+    if (this.value && parseInt(this.value) >= 0) {
+        nextButton.disabled = false; // Enable "Next" if valid input
+    } else {
+        nextButton.disabled = true; // Disable "Next" if invalid input
+    }
+});
+
+
 document.querySelector('.next-btn').addEventListener('click', function () {
     const yearInput = document.getElementById('yearRemodAdd');
     const errorSpan = document.getElementById('yearError');
