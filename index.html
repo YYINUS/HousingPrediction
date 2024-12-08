@@ -52,6 +52,22 @@
                 <button type="button" class="next-btn">Next</button>
             </div>
 
+            <!-- Slide for BldgType -->
+            <div class="slide">
+                <label for="bldgType">Type of Dwelling:</label>
+                <select id="bldgType" name="bldgType" required>
+                    <option value="" disabled selected>Select BldgType</option>
+                    <option value="1">Single-family Detached</option>
+                    <option value="2">Two-family Conversion</option>
+                    <option value="3">Duplex</option>
+                    <option value="4">Townhouse End Unit</option>
+                    <option value="5">Townhouse Inside Unit</option>
+                </select>
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+
             <!-- Slide 2 -->
             <div class="slide">
                 <label for="GarageType">Garage:</label>
@@ -78,11 +94,82 @@
 
             <!-- Slide 4 -->
             <div class="slide">
-                <label for="BsmtQual">Baseroom:</label>
+                <label for="BsmtQual">Basement:</label>
                 <select id="BsmtQual" name="BsmtQual" required>
-                    <option value="" disabled selected>Do you have a baseroom?</option>
+                    <option value="" disabled selected>Do you have a basement?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
+                </select>
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+                 
+                 
+            <!-- Slide for ExterQual -->
+            <div class="slide">
+                <label for="exterQual">Exterior Material Quality:</label>
+                <select id="exterQual" name="exterQual" required>
+                    <option value="" disabled selected>Select Exterior Quality</option>
+                    <option value="5">Excellent (Ex)</option>
+                    <option value="4">Good (Gd)</option>
+                    <option value="3">Average/Typical (TA)</option>
+                    <option value="2">Fair (Fa)</option>
+                    <option value="1">Poor (Po)</option>
+                </select>
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Slide for ExterCond -->
+            <div class="slide">
+                <label for="exterCond">Exterior Condition:</label>
+                <select id="exterCond" name="exterCond" required>
+                    <option value="" disabled selected>Select Exterior Condition</option>
+                    <option value="5">Excellent (Ex)</option>
+                    <option value="4">Good (Gd)</option>
+                    <option value="3">Average/Typical (TA)</option>
+                    <option value="2">Fair (Fa)</option>
+                    <option value="1">Poor (Po)</option>
+                </select>
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Slide for OverallQual -->
+            <div class="slide">
+                <label for="overallQual">Material & Finish Quality:</label>
+                <select id="overallQual" name="overallQual" required>
+                    <option value="" disabled selected>Rate Quality</option>
+                    <option value="10">Very Excellent</option>
+                    <option value="9">Excellent</option>
+                    <option value="8">Very Good</option>
+                    <option value="7">Good</option>
+                    <option value="6">Above Average</option>
+                    <option value="5">Average</option>
+                    <option value="4">Below Average</option>
+                    <option value="3">Fair</option>
+                    <option value="2">Poor</option>
+                    <option value="1">Very Poor</option>
+                </select>
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Slide for OverallCond -->
+            <div class="slide">
+                <label for="overallCond">Overall Condition:</label>
+                <select id="overallCond" name="overallCond" required>
+                    <option value="" disabled selected>Rate Condition</option>
+                    <option value="10">Very Excellent</option>
+                    <option value="9">Excellent</option>
+                    <option value="8">Very Good</option>
+                    <option value="7">Good</option>
+                    <option value="6">Above Average</option>
+                    <option value="5">Average</option>
+                    <option value="4">Below Average</option>
+                    <option value="3">Fair</option>
+                    <option value="2">Poor</option>
+                    <option value="1">Very Poor</option>
                 </select>
                 <button type="button" class="prev-btn">Previous</button>
                 <button type="button" class="next-btn">Next</button>
@@ -112,7 +199,6 @@
                 <button type="button" class="next-btn">Next</button>
             </div>
 
-            <!-- Final Slide (Result) -->
             <!-- Final Slide (Result) -->
             <div class="slide">
                 <h2>Your House Estimated Price is:</h2>
